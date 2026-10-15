@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  waldo_cam:
+    build: .
+    container_name: waldo_cam
+    restart: unless-stopped
+    network_mode: "host"
+    volumes:
+      - ./nopi.toml:/app/config.toml:ro
+    environment:
+      - PYTHONUNBUFFERED=1

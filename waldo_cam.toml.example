@@ -1,0 +1,36 @@
+# Example configuration for waldo_cam
+# Rename to <hostname>.toml or config.toml
+
+[mqtt]
+server_ip = "bronco.local"
+port = 1883
+client_name = "waldo_cam"
+user = ""
+password = ""
+publish_topic = "homie/face-recog"
+
+[mlface]
+host = "bigboy"
+port = 4785
+timeout = 10.0
+
+[frigate]
+# Direct Frigate HTTP API endpoint for high-resolution snapshots.
+# Bypasses Frigate's 270x270 MQTT downscaled compression.
+url = "http://bronco.local:5000"
+
+[general]
+cooldown_seconds = 10.0
+publish_unknown = true
+log_level = "INFO"
+
+[cameras]
+trumpy_cam   = { room = "Family Room", prefix = "frig-fc" }
+pi5_cam      = { room = "Office",  prefix = "frig-fc" }
+doorbell_cam = { room = "Front Entry", prefix = "frig-fc" }
+office_cam   = { room = "Office",  prefix = "frig-fc" }
+living_cam   = { room = "Family Room", prefix = "frig-fc" }
+# Disable cameras that don't need face recognition:
+garage_cam   = { room = "Garage",  prefix = "frig-fc", enabled = false }
+# Custom cooldown per camera (e.g. 60 seconds):
+patio_cam    = { room = "Patio", prefix = "frig-fc", cooldown = 60.0 }

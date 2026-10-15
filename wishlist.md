@@ -1,0 +1,20 @@
+	- [x] ~/Projects/iot/waldo_cam/
+			- [x] Environment
+				- [x] this directory will be nfs mounted on the target system
+				- [x] written in python3 
+				- [x] uv to manage dependencies
+				- [x] docker or systemd or both
+				- [x] makefile to rebuild/rerun when python code changes or requirements or .toml or launch script or 
+				- [x] testing configuration  -run from command line with log out to terminal
+				- [x] mqtt publish/subscribe, and send/receive - integrate event loops or use asynchio
+				- [x] Settings via .toml file, proably in a class
+				- [x] logging 
+			- [x] Example code
+				- [x] see ~/Projects/iot/mqttaudio for settings, logging, Makefile examples
+				- [x] see ~/Projects/iot/mlface/mlface.py 
+			- [x] Requirements
+				- [x] mqtt subscribe to a list of topics from frigate person detection
+				- [x] when active topic payload > 0 get the snapshot topic payload - a jpg.
+				- [x] Send that via a websocket to mlface. Process the return to get the name and the camera name
+				- [x] Match the camera name to a list of rooms entered from setting/toml file
+				- [x] mqtt publish a json payload of the person name, detecting camera, room to a topic (from the setting toml file)

@@ -1,0 +1,30 @@
+# Configuration for waldo_cam on nopi
+[mqtt]
+server_ip = "bronco"
+port = 1883
+client_name = "nopi_waldo"
+publish_topic = "homie/face-recog"
+
+[mlface]
+host = "bigboy"
+port = 4785
+timeout = 10.0
+
+[frigate]
+url = "http://bronco:5000"
+
+[general]
+cooldown_seconds = 10.0
+publish_unknown = true
+log_level = "INFO"
+
+[cameras]
+trumpy_cam = { room = "Family Room", prefix = "frig-fc" }
+pi5_cam    = { room = "Office",  prefix = "frig-fc" }
+doorbell_cam = { room = "Front Entry", prefix = "frig-fc" }
+master_cam = { room = "Master Bedroom", prefix = "frig-fc" }
+living_cam = { room = "Family Room", prefix = "frig-fc" }
+garage_cam = { room = "Garage", prefix = "frig-fc", enabled = true}
+guest_cam  = { room = "Guest Room", prefix = "frig-fc" }
+office_cam = { room = "Office",  prefix = "frig-fc" }
+patio_cam  = { room = "Patio", prefix = "frig-fc" }

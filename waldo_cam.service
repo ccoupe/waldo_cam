@@ -1,0 +1,18 @@
+[Unit]
+Description=Waldo Cam Frigate Face Recognition Bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ccoupe
+Group=ccoupe
+WorkingDirectory=/usr/local/lib/waldo_cam
+ExecStart=/usr/local/lib/waldo_cam/waldo_cam.sh
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
